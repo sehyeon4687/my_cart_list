@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 
 const Style = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 
   .cre{
     width: 100%;
@@ -39,18 +39,18 @@ function App() {
 
   const [info, setInfo] = useState(null)
 
+  let url = `http://localhost:3001/shoping_list`
+
   useEffect(() => {
-    fetch(`http://localhost:3001/shoping_list`)
+    fetch(url)
     .then((response) => response.json())
     .then((data) => {
       setInfo(data)
-    }, [])
+    })
 
-  })
+  }, [info])
 
   const handleQuantityButton = (id) => {
-
-    
 
     let putData = {
       'id' : info[id].id,
@@ -122,7 +122,7 @@ function App() {
 
   const handleDlelte = (id) => {
 
-    fetch(`http://localhost:3001/shoping_list${id}`,{
+    fetch(`http://localhost:3001/shoping_list/${id}`,{
       method: "DELETE"
     }).then(() => {
       console.log("삭제됐다!")
@@ -135,6 +135,8 @@ function App() {
   return (
     <Style>
       <div>
+        {info !== null? 
+        <div>
         {info.map((el) => {
           return (
             <div key={el.id}>
@@ -155,6 +157,8 @@ function App() {
             </div>
           )
         })}
+        </div>
+        : null}
         <div>
           <button className="cre" onClick={handleCreate}>생성</button>
         </div>
