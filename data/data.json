@@ -1,0 +1,34 @@
+{
+  "shoping_list": [
+    {
+      "id": 0,
+      "name": "칫솔",
+      "quantity": 0,
+      "price": 1000
+    },
+    {
+      "id": 1,
+      "name": "물티슈",
+      "quantity": 0,
+      "price": 1500
+    },
+    {
+      "id": 2,
+      "name": "바디워시",
+      "quantity": 0,
+      "price": 3000
+    },
+    {
+      "id": 3,
+      "name": "섬유유연제",
+      "quantity": 0,
+      "price": 5000
+    },
+    {
+      "id": 4,
+      "name": "디퓨저",
+      "quantity": 0,
+      "price": 2000
+    }
+  ]
+}
